@@ -98,10 +98,28 @@ Node* LinkedList::FindElement(int index) {
 void LinkedList::DeleteList()
 {
 	Node* nodePtr = _tail;
-	while (_size > 0) {
+	while (_size > 0) 
+	{
 		nodePtr = nodePtr->next;
 		delete(_tail);
 		_tail = nodePtr;
 		_size--;
 	}
 }
+
+void LinkedList::BubleSort()
+{
+	int index = 0;
+	for (Node*tmp = _head; index < _size; tmp=tmp->prev, index++) 
+	{
+		int index1 = 0;
+		for (Node*tmp1 = tmp->prev; index1 < _size; tmp1 = tmp1->prev, index1++) 
+		{
+			if (tmp->GetData() < tmp1->GetData() )
+			{
+				tmp->operator=(tmp1);
+			}
+		}
+	}
+}
+

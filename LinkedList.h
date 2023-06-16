@@ -9,11 +9,12 @@ private:
 	int _size;
 public:
 	LinkedList();
-
+	
 	void AddTail(int data);
 	void AddHead(int data);
 	void ShowList();
 	void DeleteElement(int index);
 	void DeleteList();
 	Node* FindElement(int index);
+	void BubleSort();
 };
